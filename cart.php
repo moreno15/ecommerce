@@ -1,47 +1,57 @@
 <?php // SDK de Mercado Pago
-/*require 'apimercado/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-8208253118659647-112521-dd670f3fd6aa9147df51117701a2082e-677408439');
+MercadoPago\SDK::setAccessToken('TEST-677296575997015-121102-04ddee844c4047f7181f8a2f8b2df8fc-685998391');
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
 
 // Crea un ítem en la preferencia
-$item = new MercadoPago\Item();
-$item->title = 'Mi producto';
-$item->quantity = 1;
-$item->unit_price = 75.56;
 
-$preference->items = array($item);
+$productos= array();
+for ($i=0; $i <10 ; $i++) {
+  $item = new MercadoPago\Item();
+  $item->id = '1234';
+  $item->title = 'Mi producto';
+  $item->description = 'descripcion producto';
+  $item->picture_url = '';
+  $item->quantity = 1;
+  $item->unit_price = 75.56;
+
+  $productos[]=$item;
+}
+
+
+$preference->items =$productos;
 
 $payer = new MercadoPago\Payer();
- $payer->name = "Charles";
+ $payer->name = "Lalo Landa";
  $payer->surname = "Luevano";
  $payer->email = "test_user_46542185@testuser.com";
  $payer->date_created = "2018-06-02T12:58:41.425-04:00";
  $payer->phone = array(
-   "area_code" => "+51",
-   "number" => "949 128 866"
+   "area_code" => "+52",
+   "number" => "5549737300"
  );
 
  $payer->identification = array(
    "type" => "DNI",
-   "number" => "12345678"
+   "number" => "22334445"
  );
 
  $payer->address = array(
-   "street_name" => "Cuesta Miguel Armendáriz",
-   "street_number" => 1004,
-   "zip_code" => "11020"
+   "street_name" => "nsurgentesSur",
+   "street_number" => 1602,
+   "zip_code" => "03940"
  );
 
-$preference->$payer = array($payer);
+$preference->payer = array($payer);
 
 $preference->back_urls = array(
-    "success" => "https://www.tu-sitio/success",
-    "failure" => "http://www.tu-sitio/failure",
-    "pending" => "http://www.tu-sitio/pending"
+    "success" => "http://mitienda.com/success.php",
+    "failure" => "http://mitienda.com/failure.php?error=failure",
+    "pending" => "http://mitienda.com/pending.php?error=pending"
 );
 
 $preference->auto_return = "approved";
@@ -49,7 +59,7 @@ $preference->auto_return = "approved";
 
 
 $preference->save();
-*/
+
 ?>
 <html lang="es">
   <head>
@@ -273,10 +283,9 @@ $preference->save();
         <div class="shopping-cart-footer">
           <div class="column"><a class="btn btn-outline-secondary" href="shop-grid-ls.html"><i class="icon-arrow-left"></i>&nbsp;Back to Shopping</a></div>
           <div class="column"><a class="btn btn-primary" href="#" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success" href="checkout-address.html">Checkout</a></div>
-          <script
-src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
-data-preference-id="<?php echo $preference->id; ?>">
-</script>
+          <form action="/gracias.php" method="POST">
+            <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>"> </script>
+          </form>
         </div>
         <!-- Related Products Carousel-->
         <h3 class="text-center padding-top-2x mt-2 padding-bottom-1x">You May Also Like</h3>
