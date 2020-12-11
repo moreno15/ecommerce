@@ -1,0 +1,12 @@
+
+.modal-class{
+  display: none !important;
+}
+
+
+@media screen and (max-width: 991px) {
+    .modal-class{
+      display: block !important;
+    }
+
+  }
