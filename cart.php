@@ -8,6 +8,16 @@ MercadoPago\SDK::setAccessToken('TEST-677296575997015-121102-04ddee844c4047f7181
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
 
+$preference->back_urls = array(
+    "success" => "http://mitienda.com/success.php",
+    "failure" => "http://mitienda.com/failure.php?error=failure",
+    "pending" => "http://mitienda.com/pending.php?error=pending"
+);
+
+$preference->auto_return = "approved";
+
+
+
 // Crea un ítem en la preferencia
 
 $productos= array();
@@ -26,6 +36,7 @@ for ($i=0; $i <10 ; $i++) {
 
 $preference->items =$productos;
 
+/*
 $payer = new MercadoPago\Payer();
  $payer->name = "Lalo Landa";
  $payer->surname = "Luevano";
@@ -47,15 +58,8 @@ $payer = new MercadoPago\Payer();
    "zip_code" => "03940"
  );
 
-$preference->payer = array($payer);
 
-$preference->back_urls = array(
-    "success" => "http://mitienda.com/success.php",
-    "failure" => "http://mitienda.com/failure.php?error=failure",
-    "pending" => "http://mitienda.com/pending.php?error=pending"
-);
-
-$preference->auto_return = "approved";
+$preference->payer = array($payer);*/
 
 
 
