@@ -1,8 +1,9 @@
 <?php // SDK de Mercado Pago
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken('TEST-677296575997015-121102-04ddee844c4047f7181f8a2f8b2df8fc-685998391');
+
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
