@@ -21,9 +21,9 @@ $preference = new MercadoPago\Preference();
 $preference ->external_reference="ronald.27unsch@gmail.com";
 $preference ->notification_url="https://hookb.in/3OJZpEdOwKCEwwjBWMGa";
 $preference->back_urls = array(
-    "success" => "http://mitienda.com/success.php",
-    "failure" => "http://mitienda.com/failure.php?error=failure",
-    "pending" => "http://mitienda.com/pending.php?error=pending"
+    "success" => "https://ecomercemoreno.herokuapp.com/success.php",
+    "failure" => "https://ecomercemoreno.herokuapp.com/failure.php?error=failure",
+    "pending" => "https://ecomercemoreno.herokuapp.com/pending.php?error=pending"
 );
 
 $preference->auto_return = "approved";
