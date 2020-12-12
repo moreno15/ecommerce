@@ -19,7 +19,7 @@ MercadoPago\SDK::setAccessToken('APP_USR-8208253118659647-112521-dd670f3fd6aa914
 $preference = new MercadoPago\Preference();
 
 $preference ->external_reference="ronald.27unsch@gmail.com";
-$preference ->notification_url="https://hookbin.com/3OJZpEdOwKCEwwjBWMGa";
+$preference ->notification_url="https://hookb.in/3OJZpEdOwKCEwwjBWMGa";
 $preference->back_urls = array(
     "success" => "http://mitienda.com/success.php",
     "failure" => "http://mitienda.com/failure.php?error=failure",
