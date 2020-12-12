@@ -1,4 +1,5 @@
 <!-- https://ecomercemoreno.herokuapp.com/cart.php -->
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -69,7 +70,7 @@
       <div class="site-branding">
         <div class="inner">
           <!-- Site Logo-->
-          <a  class="site-logo" href="index.html">
+          <a  class="site-logo" href="index.php">
             <h1>LogoTienda</h1>
           </a>
         </div>
@@ -77,56 +78,13 @@
       <!-- Main Navigation-->
       <nav class="site-menu">
         <ul >
-          <li class="has-megamenu active"><a href="index.html"><span>Inicio</span></a>  </li>
-          <li class="has-megamenu "><a href="index.html"><span>Sobre Nosotros</span></a>  </li>
-          <li style="padding-right:300px" class="has-megamenu "><a href="index.html"><span>Concatos</span></a>  </li>
+          <li class="has-megamenu active"><a href="index.php"><span>Inicio</span></a>  </li>
+          <li class="has-megamenu "><a href="index.php"><span>Sobre Nosotros</span></a>  </li>
+          <li style="padding-right:300px" class="has-megamenu "><a href="index.php"><span>Concatos</span></a>  </li>
         </ul>
       </nav>
       <!-- Toolbar-->
-      <div class="toolbar">
-        <div class="inner">
-          <div class="tools">
-            <div class="search"><i class="icon-search"></i></div>
-            <div class="account"><a href="account-orders.html"></a><i class="icon-head"></i>
-              <ul class="toolbar-dropdown">
-                <li class="sub-menu-user">
-                  <div class="user-ava"><img src="img/account/user-ava-sm.jpg" alt="Daniel Adams">
-                  </div>
-                  <div class="user-info">
-                    <h6 class="user-name">Daniel Adams</h6><span class="text-xs text-muted">290 Reward points</span>
-                  </div>
-                </li>
-                  <li><a href="account-profile.html">My Profile</a></li>
-                  <li><a href="account-orders.html">Orders List</a></li>
-                  <li><a href="account-wishlist.html">Wishlist</a></li>
-                <li class="sub-menu-separator"></li>
-                <li><a href="#"> <i class="icon-unlock"></i>Logout</a></li>
-              </ul>
-            </div>
-            <div class="cart"><a href="cart.php"></a><i class="icon-bag"></i><span class="count">3</span><span class="subtotal">$289.68</span>
-              <div class="toolbar-dropdown">
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="img/cart-dropdown/01.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Unionbay Park</a><span class="dropdown-product-details">1 x $43.90</span></div>
-                </div>
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="img/cart-dropdown/02.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Daily Fabric Cap</a><span class="dropdown-product-details">2 x $24.89</span></div>
-                </div>
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="img/cart-dropdown/03.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Haan Crossbody</a><span class="dropdown-product-details">1 x $200.00</span></div>
-                </div>
-                <div class="toolbar-dropdown-group">
-                  <div class="column"><span class="text-lg">Total:</span></div>
-                  <div class="column text-right"><span class="text-lg text-medium">$289.68&nbsp;</span></div>
-                </div>
-                <div class="toolbar-dropdown-group">
-                  <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="cart.php">View Cart</a></div>
-                  <div class="column"><a class="btn btn-sm btn-block btn-success" href="checkout-address.html">Checkout</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </header>
     <!-- Off-Canvas Wrapper-->
     <div class="offcanvas-wrapper" style="margin-top:50px">
@@ -143,6 +101,7 @@
 
               </div>
             </div>
+
             <!-- Products Grid-->
             <div class="isotope-grid cols-3 mb-2">
               <div class="gutter-sizer"></div>
@@ -152,146 +111,137 @@
                 <div class="product-card">
 
 
-                  <a class="product-thumb" href="shop-single.html"><img src="img/shop/products/01.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Zapatilla</a></h3>
+                  <a class="product-thumb" href="#"><img src="img/shop/products/01.jpg" alt="Product"></a>
+                  <h3 class="product-title"><a href="#">Zapatilla</a></h3>
                   <h4 class="product-price">
-                     S/.49.99
+                     S/.50.00
                   </h4>
                   <div class="product-buttons">
 
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
+                    <form action="comprar.php" method="post">
+                      <input type="hidden" name="name" value="Zapatilla">
+                      <input type="hidden" name="precio" value="50.00">
+                      <select class=" form-control input-sm" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <input type="hidden" name="img" value="img/shop/products/01.jpg">
+                      <button type="submit"  class="btn btn-outline-primary btn-sm btncomprar" >COMPRAR</button>
+                    </form>
+
                   </div>
                 </div>
               </div>
               <!-- Product-->
               <div class="grid-item">
-                <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="img/shop/products/02.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Cartera</a></h3>
+                <div class="product-card"><a class="product-thumb" href="#"><img src="img/shop/products/02.jpg" alt="Product"></a>
+                  <h3 class="product-title"><a href="#">Cartera</a></h3>
                   <h4 class="product-price">S/. 200.00</h4>
                   <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
+                    <form action="comprar.php" method="post">
+                      <input type="hidden" name="name" value="Cartera">
+                      <input type="hidden" name="precio" value="200.00">
+                      <select class=" form-control input-sm" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <input type="hidden" name="img" value="img/shop/products/02.jpg">
+                      <button type="submit"  class="btn btn-outline-primary btn-sm btncomprar" >COMPRAR</button>
+                    </form>
+                   </div>
                 </div>
               </div>
               <!-- Product-->
               <div class="grid-item">
                 <div class="product-card">
-                    <a class="product-thumb" href="shop-single.html"><img src="img/shop/products/03.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Lentes</a></h3>
+                    <a class="product-thumb" href="#"><img src="img/shop/products/03.jpg" alt="Product"></a>
+                  <h3 class="product-title"><a href="#">Lentes</a></h3>
                   <h4 class="product-price">S/.155.00</h4>
                   <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
+                    <form action="comprar.php" method="post">
+                      <input type="hidden" name="name" value="Lentes">
+                      <input type="hidden" name="precio" value="155.00">
+                      <select class=" form-control input-sm" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <input type="hidden" name="img" value="img/shop/products/03.jpg">
+                      <button type="submit"  class="btn btn-outline-primary btn-sm btncomprar" >COMPRAR</button>
+                    </form>
+                   </div>
                 </div>
               </div>
               <!-- Product-->
               <div class="grid-item">
                 <div class="product-card">
-                  <div class="product-badge text-muted">Out of stock</div><a class="product-thumb" href="shop-single.html"><img src="img/shop/products/08.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Polo Top</a></h3>
+                  <div class="product-badge text-muted">Out of stock</div><a class="product-thumb"  href="#"><img src="img/shop/products/08.jpg" alt="Product"></a>
+                  <h3 class="product-title"><a href="#">Polo Top</a></h3>
                   <h4 class="product-price">S/.128.00</h4>
                   <div class="product-buttons">
-                    <a class="btn btn-outline-secondary btn-sm" href="shop-single.html">Agregar Cesta</a>
-                  </div>
+                    <form action="comprar.php" method="post">
+                      <input type="hidden" name="name" value="Polo Top">
+                      <input type="hidden" name="precio" value="128.00">
+                      <select class=" form-control input-sm" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <input type="hidden" name="img" value="img/shop/products/08.jpg">
+                      <button type="submit"  class="btn btn-outline-primary btn-sm btncomprar" >COMPRAR</button>
+                    </form>
+
+                   </div>
                 </div>
               </div>
               <!-- Product-->
               <div class="grid-item">
                 <div class="product-card">
-                    <a class="product-thumb" href="shop-single.html"><img src="img/shop/products/05.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Polera</a></h3>
+                    <a class="product-thumb" href="#"><img src="img/shop/products/05.jpg" alt="Product"></a>
+                  <h3 class="product-title"><a href="#">Polera</a></h3>
                   <h4 class="product-price">S/.65.00</h4>
                   <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
+                    <form action="comprar.php" method="post">
+                      <input type="hidden" name="name" value="Polera">
+                      <input type="hidden" name="precio" value="65.00">
+                      <select class=" form-control input-sm" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <input type="hidden" name="img" value="img/shop/products/05.jpg">
+                      <button type="submit"  class="btn btn-outline-primary btn-sm btncomprar" >COMPRAR</button>
+                    </form>
+                   </div>
                 </div>
               </div>
               <!-- Product-->
               <div class="grid-item">
                 <div class="product-card">
 
-                  <a class="product-thumb" href="shop-single.html"><img src="img/shop/products/06.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Casaca</a></h3>
+                  <a class="product-thumb" href="#"><img src="img/shop/products/06.jpg" alt="Product"></a>
+                  <h3 class="product-title"><a href="#">Casaca</a></h3>
                   <h4 class="product-price">
                     S/.36.00
                   </h4>
                   <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
+                    <form action="comprar.php" method="post">
+                      <input type="hidden" name="name" value="Casaca">
+                      <input type="hidden" name="precio" value="36.00">
+                      <select class=" form-control input-sm" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <input type="hidden" name="img" value="img/shop/products/6.jpg">
+                      <button type="submit"  class="btn btn-outline-primary btn-sm btncomprar" >COMPRAR</button>
+                    </form>
+                   </div>
                 </div>
               </div>
-              <!-- Product-->
-              <div class="grid-item">
-                <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="img/shop/products/04.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Correa</a></h3>
-                  <h4 class="product-price">S/.47.00</h4>
-                  <div class="product-buttons">
 
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Product-->
-              <div class="grid-item">
-                <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="img/shop/products/10.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Gorra</a></h3>
-                  <h4 class="product-price">S/.31.99</h4>
-                  <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Product-->
-              <div class="grid-item">
-                <div class="product-card">
-
-                    <a class="product-thumb" href="shop-single.html"><img src="img/shop/products/11.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Zapatilla deportivo</a></h3>
-                  <h4 class="product-price">S/.90.00</h4>
-                  <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Product-->
-              <div class="grid-item">
-                <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="img/shop/products/16.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Bolso tote grande Wordmark</a></h3>
-                  <h4 class="product-price">S/.29.99</h4>
-                  <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Product-->
-              <div class="grid-item">
-                <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="img/shop/products/14.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Reloj</a></h3>
-                  <h4 class="product-price">$145.00</h4>
-                  <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Product-->
-              <div class="grid-item">
-                <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="img/shop/products/15.jpg" alt="Product"></a>
-                  <h3 class="product-title"><a href="shop-single.html">Aretes</a></h3>
-                  <h4 class="product-price">S/.90.00</h4>
-                  <div class="product-buttons">
-
-                    <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Agregar Cesta</button>
-                  </div>
-                </div>
-              </div>
             </div>
             <!-- Pagination-->
 
@@ -341,5 +291,43 @@
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
     <script src="js/vendor.min.js"></script>
     <script src="js/scripts.min.js"></script>
+
+    <script type="text/javascript">
+
+    $( ".btncomprar" ).click(function() {
+      var nombreproducto=$(this).data("name");
+      var img=$(this).data("img");
+      var precio=$(this).data("precio");
+
+      var formData = new FormData();
+
+      formData.append("name",name);
+      formData.append("img",img);
+      formData.append("precio",precio);
+
+       $.ajax({
+         url: "comprar.php",
+         type: "POST",
+         data: formData,
+          contentType: false,
+          processData: false,
+          success: function(datos){
+
+            if (datos==="error") {
+              alert("error");
+            }else{
+              $.post("../ajax/categoria.php?op=activar", {idcategoria : idcategoria}, function(e){
+            		bootbox.alert(e);
+    	            tabla.ajax.reload();
+            	});
+                $(location).attr("href","comprar.php");
+            }
+
+         }
+       });
+
+
+    })
+    </script>
   </body>
 </html>
