@@ -74,7 +74,7 @@ $preference->payment_methods = array(
    "number" => "22334445"
  );
  $payer->address = array(
-   "street_name" => "nsurgentes Sur",
+   "street_name" => "Insurgentes Sur",
    "street_number" => 1602,
    "zip_code" => "03940"
  );
