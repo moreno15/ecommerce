@@ -1,4 +1,6 @@
 <!-- https://ecomercemoreno.herokuapp.com/cart.php -->
+
+<!-- https://hookbin.com/3OJZpEdOwKCEwwjBWMGa   endopint-->
 <?php // SDK de Mercado Pago
 require 'vendor/autoload.php';
 
@@ -12,8 +14,9 @@ $uri_img="http://".$uri."/".$_POST["img"];
 
 
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-8208253118659647-112521-dd670f3fd6aa9147df51117701a2082e-677408439');
 
+MercadoPago\SDK::setAccessToken('APP_USR-8208253118659647-112521-dd670f3fd6aa9147df51117701a2082e-677408439');
+MercadoPago\SDK::setIntegratorId("dev_2e4ad5dd362f11eb809d0242ac130004");
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -43,19 +46,19 @@ for ($i=0; $i <1 ; $i++) {
 }
 $preference->items =$productos;
 
-$payment=array();
-$payment_methods= new MercadoPago\PaymentMethod();
-
-$payment_methods->excluded_payment_methods = array(
-      "id" => "diners"
+$preference->payment_methods = array(
+  "excluded_payment_methods" => array(
+    array("id" => "diners")
+  ),
+  "excluded_payment_types" => array(
+    array("id" => "atm")
+  ),
+  "installments" => 6
 );
-$payment[]=$payment_methods;
-$payment_methods->excluded_payment_methods = array(
-      "id" => "redlink"
-);
-$payment[]=$payment;
 
-$preference->items =$productos;
+
+
+
 
  $payer = new MercadoPago\Payer();
  $payer->name = "Lalo Landa";
