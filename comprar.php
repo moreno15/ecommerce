@@ -203,7 +203,7 @@ $preference->save();
 
                     <form action="/gracias.php" method="POST">
                       <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
-                      data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagra la comprar" > </script>
+                      data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra" > </script>
                     </form>
 
                   </div>
