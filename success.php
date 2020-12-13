@@ -90,7 +90,7 @@ $urlParams1 = explode("&", $urlParams[1]);
             <li style="padding-right:300px" class="has-megamenu "><a href="index.php"><span>Concatos</span></a>  </li>
           </ul>
         </nav>
-        <!-- Toolbar--> 
+        <!-- Toolbar-->
       </header>
       <!-- Off-Canvas Wrapper-->
       <div class="offcanvas-wrapper" style="margin-top:50px">
@@ -101,7 +101,8 @@ $urlParams1 = explode("&", $urlParams[1]);
             <!-- Products-->
             <div class="col-xl-9 col-lg-8 order-lg-2">
               <?php
-                   echo $urlParams1[0] . ',' ." <br> " ;
+              echo "Operación exitoza";
+                   /*echo $urlParams1[0] . ',' ." <br> " ;
                    echo $urlParams1[1]. ',' .'<br>';
                    echo $urlParams1[2] . ',' .'<br>';
                    echo   $urlParams1[3] . ',' .'<br>';
@@ -112,7 +113,7 @@ $urlParams1 = explode("&", $urlParams[1]);
                    echo  $urlParams1[8] . ',' .'<br>';
                    echo  $urlParams1[9] . ',' .'<br>';
                    echo  $urlParams1[10]. ',' .'<br>' ;
-
+*/
 
                 ?>
             </div>
