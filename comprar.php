@@ -202,14 +202,14 @@ $preference->save();
                   <h4 class="product-price">
                      S/.<?php echo ($_POST["precio"]*$_POST["cantidad"]) ?>
                   </h4>
-                  <div class="product-buttons">
+                    <!--<div class="product-buttons">
 
-                    <form action="/gracias.php" method="POST">
+                  <form action="/gracias.php" method="POST">
                       <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
                       data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra" > </script>
                     </form>
 
-                  </div>
+                  </div>-->
                 </div>
               </div>
             </div>
